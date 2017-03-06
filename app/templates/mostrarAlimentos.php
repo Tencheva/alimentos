@@ -2,9 +2,10 @@
 
  <table>
      <tr>
-         <th>alimento (por 100g)</th>
-         <th>energía (Kcal)</th>
-         <th>grasa (g)</th>
+         <th>Alimento (por 100g)</th>
+         <th>Energía (Kcal)</th>
+         <th>Grasa (g)</th>
+         <th>Documento XML</th>
      </tr>
      <?php foreach ($params['alimentos'] as $alimento) :?>
      <tr>
@@ -12,6 +13,7 @@
                  <?php echo $alimento['nombre'] ?></a></td>
          <td><?php echo $alimento['energia']?></td>
          <td><?php echo $alimento['grasatotal']?></td>
+         <td><a href="index.php?ctl=xml&id=<?php echo $alimento['id']?>">Generar XML</a></td>
      </tr>
      <?php endforeach; ?>
 

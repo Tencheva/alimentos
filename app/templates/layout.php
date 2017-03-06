@@ -13,13 +13,15 @@
 
          <div id="menu">
              <hr/>
-             <a href="index.php?ctl=inicio">inicio</a> |
-             <a href="index.php?ctl=listar">ver alimentos</a> |
-             <a href="index.php?ctl=insertar">insertar alimento</a> |
-             <a href="index.php?ctl=buscar">buscar por nombre</a> |
-             <a href="index.php?ctl=buscarAlimentosPorEnergia">buscar por energia</a> |
-             <a href="index.php?ctl=buscarAlimentosCombinada">búsqueda combinada</a>
-             <a href="index.php?ctl=buscarConMenorGrasa"> Buscar con menor grasa</a>
+             <a href="index.php?ctl=inicio">Inicio</a> |
+             <a href="index.php?ctl=listar">Ver alimentos</a> |
+             <a href="index.php?ctl=insertar">Insertar alimento</a> |
+             <a href="index.php?ctl=buscar">Buscar por nombre</a> |
+             <a href="index.php?ctl=buscarAlimentosPorEnergia">Buscar por energia</a> |
+             <a href="index.php?ctl=buscarAlimentosCombinada">Búsqueda combinada</a> |
+             <a href="index.php?ctl=buscarPorGrasa"> Buscar por grasa</a> |
+             <a href="index.php?ctl=eliminarAlimento">Eliminar un alimento</a>|
+             <a href="index.php?ctl=wikipedia"> Wikipedia</a> |
              <hr/>
          </div>
 

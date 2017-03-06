@@ -94,11 +94,11 @@
          return $alimentos;
 	}
 
-	public function buscarConMenorGrasa($grasa){
+	public function buscarPorGrasa($grasa){
 		
 		$grasa = htmlspecialchars($grasa);
 		
-		$sql = "select * from alimentos where grasa = " . $grasa . " order by nombre desc";
+		$sql = "select * from alimentos where grasatotal = " . $grasa . " order by nombre desc";
 
          $result = mysql_query($sql, $this->conexion);
 
@@ -110,6 +110,7 @@
 
          return $alimentos;
 	}
+	
 
      public function dameAlimento($id)
      {
@@ -152,5 +153,19 @@
                  is_numeric($f) &
                  is_numeric($g));
      }
+	
+	//Eliminar Alimento
+	public function eliminarAlimento($nombre)
+    {
+        $nombre = htmlspecialchars($nombre);
+
+        $sql = "delete from alimentos where nombre like '" . $nombre . "';";
+
+         $result = mysql_query($sql, $this->conexion);
+
+        if ($result){
+            return "borrado";
+        }
+    } 
 
  }

@@ -124,8 +124,8 @@
          require __DIR__ . '/templates/buscarAlimentosCombinada.php';
 	}
 
-
-	public function buscarConMenorGrasa(){
+//Funcion buscar por grasa
+	public function buscarPorGrasa(){
 		$params = array(
              'grasa' => '',
              'resultado' => array(),
@@ -136,14 +136,61 @@
 
          if ($_SERVER['REQUEST_METHOD'] == 'POST') {
              $params['grasa'] = $_POST['grasa'];
-             $params['resultado'] = $m->buscarConMenorGrasa($_POST['grasa']);
+             $params['resultado'] = $m->buscarPorGrasa($_POST['grasa']);
          }
 
-         require __DIR__ . '/templates/buscarConMenorGrasa.php';
-     
-				
+         require __DIR__ . '/templates/buscarPorGrasa.php';
+     			
 	}
 	
+//Wikipedia de los alimentos
+	public function wikipedia()
+    	 {
+         	$m = new Model(Config::$mvc_bd_nombre, Config::$mvc_bd_usuario,
+                     Config::$mvc_bd_clave, Config::$mvc_bd_hostname);
+
+         $params = array(
+             'alimentos' => $m->dameAlimentos(),
+         );
+
+         require __DIR__ . '/templates/wikipedia.php';
+     }
+
+//Archivo xml
+	public function xml(){
+		if (!isset($_GET['id'])) {
+             throw new Exception('Página no encontrada');
+         }
+
+         $id = $_GET['id'];
+
+         $m = new Model(Config::$mvc_bd_nombre, Config::$mvc_bd_usuario,
+                     Config::$mvc_bd_clave, Config::$mvc_bd_hostname);
+
+         $alimento = $m->dameAlimento($id);
+
+         $params = $alimento;
+
+
+        require __DIR__ . '/templates/xml.php';
+
+     }  
+	
+//Listar xml
+	public function listarxml()
+     {
+         $m = new Model(Config::$mvc_bd_nombre, Config::$mvc_bd_usuario,
+                     Config::$mvc_bd_clave, Config::$mvc_bd_hostname);
+
+         $params = array(
+             'alimentos' => $m->dameAlimentos(),
+         );
+
+         require __DIR__ . '/templates/xml.php';
+     }
+
+
+
      public function ver()
      {
          if (!isset($_GET['id'])) {
@@ -161,5 +208,24 @@
 
          require __DIR__ . '/templates/verAlimento.php';
      }
+	 
+	 //Funcion eliminar un Alimento
+	public function eliminarAlimento()
+    {
+        $params = array(
+            'nombre' => '',
+            'resultado' => array(),
+        );
 
+        $m = new Model(Config::$mvc_bd_nombre, Config::$mvc_bd_usuario,
+            Config::$mvc_bd_clave, Config::$mvc_bd_hostname);
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $params['nombre'] = $_POST['nombre'];
+            $params['resultado'] = $m->eliminarAlimento($_POST['nombre']);
+            header('Location: index.php?ctl=listar');
+        }
+
+       require __DIR__ . '/templates/eliminarAlimento.php';
+    }
  }

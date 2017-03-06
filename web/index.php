@@ -14,7 +14,11 @@
      'buscar' => array('controller' =>'Controller', 'action' =>'buscarPorNombre'),
 	 'buscarAlimentosPorEnergia' => array('controller' =>'Controller', 'action' =>'buscarPorEnergia'),
 	 'buscarAlimentosCombinada' => array ('controller' => 'Controller', 'action' => 'buscarAlimentosCombinada'),
-	 'buscarConMenorGrasa' => array ('controller' => 'Controller', 'action' => 'buscarConMenorGrasa'),
+	 'buscarPorGrasa' => array ('controller' => 'Controller', 'action' => 'buscarPorGrasa'),
+	 'wikipedia' => array('controller' =>'Controller', 'action' =>'wikipedia'),
+	  'listarxml' => array('controller' =>'Controller', 'action' =>'listarxml'),
+     'xml' => array('controller' =>'Controller', 'action' =>'xml'),
+	 'eliminarAlimento' => array('controller' =>'Controller', 'action' =>'eliminarAlimento'),
      'ver' => array('controller' =>'Controller', 'action' =>'ver')
  );
 

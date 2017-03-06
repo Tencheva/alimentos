@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<alimentos>
+	<alimento>
+		<nombre>kiwi</nombre>
+		<energia>50</energia>
+		<proteina>20</proteina>
+		<hidratocarbono>5</hidratocarbono>
+		<fibra>2</fibra>
+		<grasatotal>18</grasatotal>
+	</alimento>
+</alimentos>
+

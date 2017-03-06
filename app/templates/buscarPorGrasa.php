@@ -1,11 +1,11 @@
 <?php ob_start() ?>
 
-      <form name="formBusqueda" action="index.php?ctl=buscarConMenorGrasa" method="POST">
+      <form name="formBusqueda" action="index.php?ctl=buscarPorGrasa" method="POST">
 
           <table>
               <tr>
                   <td>Grasa:</td>
-                  <td><input type="number" step="any" name="energia"  value="<?php echo $params['grasa']?>">(utiliza numero entero)</td>
+                  <td><input type="number" step="any" name="grasa"  value="<?php echo $params['grasa']?>">(utiliza numero entero)</td>
 
                   <td><input type="submit" value="buscar"></td>
               </tr>
